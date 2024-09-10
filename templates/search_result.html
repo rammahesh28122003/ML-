@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&family=Madimi+One&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional CSS for consistent image size */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://media.istockphoto.com/id/1336149521/photo/golden-magnifying-glass-on-black-background.jpg?s=612x612&w=0&k=20&c=GXzS3D93sb3vBkChMYBPHarcuu4fQFIENuY9W1N2hCE=');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            /* Make the background cover the entire viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card{
+            border-width: 6px;
+            background-size: cover;
+        }
+        .book-image-container {
+            max-width: 70%;
+            height: auto;
+            overflow: hidden;
+        }
+        .left-container{
+            border-width: 3px;
+            border-color: blueviolet;
+        }
+        .book-image {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+        /* Custom CSS for dividing the container and adding borders */
+        .container-divider {
+            border-right: 1px solid; /* border between the two parts */
+            padding: 15px; /* spacing between border and content */
+        }
+        .container-divider-right{
+            border-color:rgb(10, 10, 10);
+            border-width: 3px;
+        }
+        .text-center{
+                font-family: "Madimi One", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                color: white;
+                font-size: 60px;
+              }
+        .card-title{
+                font-family: "Madimi One", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 46px;
+              }
+        
+              
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="text-center mb-4">Book Details</h1>
+
+        <div class="card">
+            <div class="row">
+                <div class="col-md-6 container-divider container-divider-right">
+                    <!-- Left container -->
+                    <div class="left-container">
+                        <!-- Content for the left part -->
+                        <div class="book-image-container">
+                            <img src="{{ book_details['image'] }}" class="card-img-top book-image" alt="Book Image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 container-divider">
+                    <!-- Right container -->
+                    <div class="right-container">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ book_details['Title'] }}</h5>
+                            <p class="card-text"><strong>Authors:</strong> {{ book_details['authors'] }}</p>
+                            <p class="card-text"><strong>Publisher:</strong> {{ book_details['publisher'] }}</p>
+                            <p class="card-text"><strong>Published Date:</strong> {{ book_details['publishedDate'] }}</p>
+                            <p class="card-text"><strong>Categories:</strong> {{ book_details['categories'] }}</p>
+                            <p class="card-text"><strong>Description:</strong> {{ book_details['description'] }}</p>
+                            <a href="{{ book_details['previewLink'] }}" class="btn btn-primary">Preview</a>
+                            <a href="{{ book_details['infoLink'] }}" class="btn btn-primary">More Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+
+</html>

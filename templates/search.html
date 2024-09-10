@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://media.istockphoto.com/id/1336149521/photo/golden-magnifying-glass-on-black-background.jpg?s=612x612&w=0&k=20&c=GXzS3D93sb3vBkChMYBPHarcuu4fQFIENuY9W1N2hCE=');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            /* Make the background cover the entire viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+        }
+
+        .search-container {
+            margin-bottom: 50px;
+        }
+
+        .search-container input[type="text"] {
+            width: 400px;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+
+        .search-container button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .search-container button i {
+            color: white;
+            font-size: 20px;
+        }
+
+        .book-image {
+            margin-top: 20px;
+            max-width: 100%; /* Decreased the maximum width */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="content">
+            <h2 class="text-center mb-4">Welcome to the Book Search</h2>
+            <div class="search-container">
+                <form action="/search_result" method="POST">
+                    <div class="input-group">
+                        <input type="text" id="search" name="user_input" class="form-control" placeholder="Search for books..." required>
+                        <div class="input-group-append">
+                            <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <p class="text-center">Search for your favorite books and discover new ones. Enter a book title
+                or author name in the search box above.</p>
+            <div class="book-image">
+                <img src="static\\depositphotos_314574622-stock-illustration-boy-and-girls-read-books-removebg-preview.png" alt="Book Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
